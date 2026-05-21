@@ -54,7 +54,7 @@ class Circle(Mesh):
 
         self.face_colors = [
 
-            (0.2, 0.2, 0.8)
+            (1, 0, 0)
 
             for _ in self.faces
         ]
