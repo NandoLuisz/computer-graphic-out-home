@@ -65,7 +65,7 @@ class Cylinder(Mesh):
             )
         self.face_colors = [
 
-            (0.0, 0.0, 0.0)
+            (1, 0.0, 0.0)
 
             for _ in self.faces
         ]

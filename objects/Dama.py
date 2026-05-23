@@ -2,30 +2,7 @@ from Renderer3D import Renderer3D
 
 from Cylinder import Cylinder
 from Tube import Tube
-from Sphere import Sphere
 from Mesh import Mesh
-from Trapezoid import Trapezoid
-from Frustum import Frustum
-from Circle import Circle
-
-circle = Circle()
-
-trunk = Frustum(
-
-    bottom_radius=1.5,
-    top_radius=1,
-    height=2,
-    segments=64
-)
-
-sphere = Sphere(
-
-    radius=1,
-
-    stacks=32,
-
-    sectors=64
-)
 
 dama = Mesh()
 
@@ -71,8 +48,6 @@ dama.merge(ring1)
 dama.merge(ring2)
 
 dama.merge(ring3)
-
-
 
 renderer = Renderer3D()
 
