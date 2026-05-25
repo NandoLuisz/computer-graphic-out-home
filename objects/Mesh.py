@@ -104,5 +104,84 @@ class Mesh:
         new_mesh.color = self.color
         return new_mesh
     
+    def export_obj(self, filename):
+
+        with open(filename, "w") as f:
+
+            # vertices
+
+            for v in self.vertices:
+
+                f.write(f"v {v.x} {v.y} {v.z}\n")
+
+            # faces
+
+            for face in self.faces:
+
+                a, b, c = face
+
+                # OBJ começa em 1
+                f.write(f"f {a+1} {b+1} {c+1}\n")
 
 
+    @staticmethod
+    def load_obj(filename):
+
+        mesh = Mesh()
+
+        with open(filename, "r") as f:
+
+            for line in f:
+
+                line = line.strip()
+
+                if not line:
+                    continue
+
+                parts = line.split()
+
+                # =========================
+                # VÉRTICES
+                # =========================
+
+                if parts[0] == "v":
+
+                    x = float(parts[1])
+                    y = float(parts[2])
+                    z = float(parts[3])
+
+                    mesh.vertices.append(
+                        Vec3(x, y, z)
+                    )
+
+                # =========================
+                # FACES
+                # =========================
+
+                elif parts[0] == "f":
+
+                    # OBJ começa em 1
+                    a = int(parts[1]) - 1
+                    b = int(parts[2]) - 1
+                    c = int(parts[3]) - 1
+
+                    mesh.faces.append((a, b, c))
+
+        # =========================
+        # NORMAIS
+        # =========================
+
+        mesh.compute_normals()
+
+        # =========================
+        # CORES PADRÃO
+        # =========================
+
+        mesh.face_colors = [
+
+            (1, 0, 0)
+
+            for _ in mesh.faces
+        ]
+
+        return mesh

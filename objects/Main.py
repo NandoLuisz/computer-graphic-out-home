@@ -77,3 +77,5 @@ dama.merge(ring3)
 renderer = Renderer3D()
 
 renderer.render_faces(dama)
+
+dama.export_obj("dama.obj")

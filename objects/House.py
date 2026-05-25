@@ -3,8 +3,6 @@ from Mesh import Mesh
 
 class House(Mesh):
 
-    
-
     def __init__(self, size=1):
 
         super().__init__()

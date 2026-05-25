@@ -161,3 +161,5 @@ queen.merge(sphere1)
 renderer = Renderer3D()
 
 renderer.render_faces(queen)
+
+queen.export_obj("queen.obj")

@@ -168,6 +168,8 @@ tower.merge(box2)
 tower.merge(box3) 
 tower.merge(box4)
 
+tower.export_obj("tower.obj")
+
 renderer = Renderer3D()
 
 renderer.render_faces(tower)
