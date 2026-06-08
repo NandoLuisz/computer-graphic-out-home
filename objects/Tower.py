@@ -31,7 +31,6 @@ torus2 = Torus(
     minor_segments=32
 )
 
-
 cylinder1 = Cylinder(radius=0.6, height=0.1, segments=64)
 
 torus3 = Torus(
@@ -42,7 +41,6 @@ torus3 = Torus(
     major_segments=64,
     minor_segments=32
 )
-
 
 torus4 = Torus(
 

@@ -8,9 +8,10 @@ from Trapezoid import Trapezoid
 from Frustum import Frustum
 from Circle import Circle
 
-circle = Circle()
-
 #----------------- MESH -----------------#
+
+base = Circle(radius=1.9, segments=64)
+base.translate(0, -0.5, 0)
 
 trunk1 = Frustum(
     bottom_radius=1.9,
@@ -142,7 +143,7 @@ sphere1.translate(0, 7.45, 0)
 
 #----------------- QUEEN -----------------#
 queen = Mesh()
-queen.merge(circle)
+queen.merge(base)
 queen.merge(trunk1)
 queen.merge(trunk2)
 queen.merge(ring1)

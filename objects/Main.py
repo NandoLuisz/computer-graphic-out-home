@@ -72,8 +72,6 @@ dama.merge(ring2)
 
 dama.merge(ring3)
 
-
-
 renderer = Renderer3D()
 
 renderer.render_faces(dama)
