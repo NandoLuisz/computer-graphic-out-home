@@ -141,26 +141,26 @@ sphere1 = Sphere(
 sphere1.translate(0, 7.45, 0)
 #-----------------------------------------#
 
-#----------------- QUEEN -----------------#
-queen = Mesh()
-queen.merge(base)
-queen.merge(trunk1)
-queen.merge(trunk2)
-queen.merge(ring1)
-queen.merge(trunk3)
-queen.merge(trunk4)
-queen.merge(ring2)
-queen.merge(trunk5)
-queen.merge(ring3)
-queen.merge(trunk6)
-queen.merge(ring4)
-queen.merge(trunk7)
-queen.merge(ring5)
-queen.merge(sphere1)
+#----------------- PINO -----------------#
+pino = Mesh()
+pino.merge(base)
+pino.merge(trunk1)
+pino.merge(trunk2)
+pino.merge(ring1)
+pino.merge(trunk3)
+pino.merge(trunk4)
+pino.merge(ring2)
+pino.merge(trunk5)
+pino.merge(ring3)
+pino.merge(trunk6)
+pino.merge(ring4)
+pino.merge(trunk7)
+pino.merge(ring5)
+pino.merge(sphere1)
 #-----------------------------------------#
 
 renderer = Renderer3D()
 
-renderer.render_faces(queen)
+renderer.render_faces(pino)
 
-queen.export_obj("queen.obj")
+pino.export_obj("pino.obj")

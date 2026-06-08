@@ -7,6 +7,7 @@ from Mesh import Mesh
 from Trapezoid import Trapezoid
 from Frustum import Frustum
 from Circle import Circle
+from LatheMesh import LatheMesh
 
 circle = Circle()
 
@@ -64,16 +65,10 @@ ring3 = Tube(
 
 ring3.translate(0, 0.5, 0)
 
-dama.merge(base1)
-
-dama.merge(ring1)
-
-dama.merge(ring2)
-
-dama.merge(ring3)
-
 renderer = Renderer3D()
 
-renderer.render_faces(dama)
+late = LatheMesh()
+
+renderer.render_faces(late)
 
 dama.export_obj("dama.obj")
