@@ -77,7 +77,7 @@ class Trapezoid(Mesh):
 
         self.face_colors = [
 
-            (0.7, 0.3, 0.2)
+            (1, 0, 0)
 
             for _ in self.faces
         ]

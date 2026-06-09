@@ -1,7 +1,6 @@
+from Cylinder import Cylinder 
+from Tube import Tube 
 from Renderer3D import Renderer3D
-
-from Cylinder import Cylinder
-from Tube import Tube
 from Mesh import Mesh
 
 dama = Mesh()

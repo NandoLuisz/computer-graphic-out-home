@@ -1,3 +1,5 @@
+import math
+
 from Renderer3D import Renderer3D
 
 from Cylinder import Cylinder
@@ -6,6 +8,7 @@ from Torus import Torus
 from Circle import Circle
 from LatheMesh import LatheMesh
 from Frustum import Frustum
+from Trapezoid import Trapezoid
 
 circle1 = Circle(radius=0.9, segments=64)
 
@@ -136,15 +139,81 @@ frustum.translate(0, 3.4, 0)
 torus8 = Torus(major_radius=0.4, minor_radius=0.1, major_segments=64, minor_segments=32)
 torus8.translate(0, 3.65, 0)
 
+torus9 = Torus(major_radius=0.2, minor_radius=0.1, major_segments=64, minor_segments=32)
+torus9.translate(0, 3.76, 0)
+
+frustum1 = Frustum(
+
+    bottom_radius=0.1,
+    top_radius=0.1,
+    height=0.1,
+    segments=64
+)
+
+frustum1.translate(0, 3.9, 0)
+
+center_y = 4.3
+offset = 0.15
+
+# Frente
+trap1 = Trapezoid(
+    bottom_width=0.2,
+    top_width=0.4,
+    height=0.4,
+    depth=0.1
+)
+
+# Trás
+trap2 = Trapezoid(
+    bottom_width=0.2,
+    top_width=0.4,
+    height=0.4,
+    depth=0.1
+)
+
+# Direita
+trap3 = Trapezoid(
+    bottom_width=0.4,
+    top_width=0.2,
+    height=0.4,
+    depth=0.1
+)
+
+# Esquerda
+trap4 = Trapezoid(
+    bottom_width=0.4,
+    top_width=0.2,
+    height=0.4,
+    depth=0.1
+)
+
+# cima
+trap1.translate(0, center_y + offset, 0)
+
+# baixo
+trap2.rotate_x(math.radians(180))
+trap2.translate(0, center_y - offset, 0)
+
+# direita
+trap3.rotate_z(math.radians(90))
+trap3.translate(offset, center_y, 0)
+
+# esquerda
+trap4.rotate_z(math.radians(-90))
+trap4.translate(-offset, center_y, 0)
+
 tower.merge(torus5) 
 tower.merge(torus6) 
 tower.merge(cylinder2)
 tower.merge(torus7)
 tower.merge(frustum) 
 tower.merge(torus8)
-
-tower.export_obj("king.obj")
-
+tower.merge(torus9)
+tower.merge(frustum1)
+tower.merge(trap1)
+tower.merge(trap2)
+tower.merge(trap3)
+tower.merge(trap4)
 renderer = Renderer3D()
 
 renderer.render_faces(tower)
