@@ -58,14 +58,14 @@ torus3.translate(0, 1.0, 0)
 
 torus4.translate(0, 1.2, 0)
 
-tower = Mesh()
+king = Mesh()
 
-tower.merge(circle1)
-tower.merge(torus1)
-tower.merge(torus2)
-tower.merge(cylinder1)
-tower.merge(torus3)
-tower.merge(torus4)
+king.merge(circle1)
+king.merge(torus1)
+king.merge(torus2)
+king.merge(cylinder1)
+king.merge(torus3)
+king.merge(torus4)
 
 # =====================================
 # LATHE
@@ -103,7 +103,7 @@ lathe = LatheMesh(
     segments=64
 )
 
-tower.merge(lathe)
+king.merge(lathe)
 
 torus5 = Torus(major_radius=0.5, minor_radius=0.1, major_segments=64, minor_segments=32)
 torus5.translate(0, 2.74, 0)
@@ -202,18 +202,20 @@ trap3.translate(offset, center_y, 0)
 trap4.rotate_z(math.radians(-90))
 trap4.translate(-offset, center_y, 0)
 
-tower.merge(torus5) 
-tower.merge(torus6) 
-tower.merge(cylinder2)
-tower.merge(torus7)
-tower.merge(frustum) 
-tower.merge(torus8)
-tower.merge(torus9)
-tower.merge(frustum1)
-tower.merge(trap1)
-tower.merge(trap2)
-tower.merge(trap3)
-tower.merge(trap4)
+king.merge(torus5) 
+king.merge(torus6) 
+king.merge(cylinder2)
+king.merge(torus7)
+king.merge(frustum) 
+king.merge(torus8)
+king.merge(torus9)
+king.merge(frustum1)
+king.merge(trap1)
+king.merge(trap2)
+king.merge(trap3)
+king.merge(trap4)
 renderer = Renderer3D()
 
-renderer.render_faces(tower)
+renderer.render_faces(king)
+
+king.export_obj('king.obj')
